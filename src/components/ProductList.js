@@ -312,13 +312,18 @@ const ProductList = ({ setCartItems }) => {
 
   const addToWishlist = (item) => {
     const existingWishlist = JSON.parse(localStorage.getItem('wishlistItems')) || [];
+    let notify = document.querySelector('.notification')
     if (!existingWishlist.some((i) => i.id === item.id)) {
       const updatedWishlist = [...existingWishlist, item];
       localStorage.setItem('wishlistItems', JSON.stringify(updatedWishlist));
       setWishlistItems(updatedWishlist);
-      alert(`${item.title} has been added to your wishlist!`);
+      notify.textContent = (`${item.title} has been added to your wishlist!`)
+      notify.style.animation = 'wish1 2s ease'
+      // alert(`${item.title} has been added to your wishlist!`);
     } else {
-      alert(`${item.title} is already in your wishlist.`);
+      notify.textContent = (`${item.title} is already in your wishlist.`)
+      notify.style.animation = 'wish2 2s ease'
+      // alert(`${item.title} is already in your wishlist.`);
     }
   };
   
@@ -334,10 +339,12 @@ const ProductList = ({ setCartItems }) => {
           <h3>{product.title}</h3>
           <p>Price: ${product.price}</p>
           <button
-  onClick={(event) => {
-    alert(`${product.title} has being added to cart.`);
+  onClick={() => {
+    let notify = document.querySelector('.notification')
+    notify.textContent = (`${product.title} has being added to cart.`)
+    notify.style.animation = 'cart 2s ease'
+    // alert(`${product.title} has being added to cart.`);
     addToCart(product);
-    // event.currentTarget.style.background = 'green';
   }}
   className="add-cart-button"
 >

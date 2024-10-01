@@ -1,24 +1,107 @@
-/* src/styles.css */
 body {
-    background-color: #f0f8ff; /* Light blue shade */
-    font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  font-family: Arial, sans-serif;
+}
+.notification{
+  padding: 10px;
+  background: #e6e6e6;
+  color: #003466;
+  font-size: 20px;
+  width: fit-content;
+  position: fixed;
+  border: 2px solid #003466;
+  border-radius: 10px;
+  top: 10px;
+  left: 40%;
+  z-index: 2000;
+  transform: translateY(-200px);
+  animation: drop 2s ease;
+}
+
+@keyframes cart {
+  0% {
+    transform: translateY(-200px);
   }
-  
-  header {
-    background-color: #ee1aff; /* Primary blue */
-    padding: 1rem;
+
+  25% {
+    transform: translateY(0px);
   }
-  
-  nav a {
-    color: white;
-    margin: 0 1rem;
-    text-decoration: none;
+
+  50% {
+    transform: translateY(0px);
   }
-  
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #007bff;
-    color: white;
+
+  75% {
+    transform: translateY(0px);
   }
-  
+
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+@keyframes wish1 {
+  0% {
+    transform: translateY(-200px);
+  }
+
+  25% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  75% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+@keyframes wish2 {
+  0% {
+    transform: translateY(-200px);
+  }
+
+  25% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  75% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+@keyframes order {
+  0% {
+    transform: translateY(-200px);
+  }
+
+  25% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  75% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-200px);
+  }
+}

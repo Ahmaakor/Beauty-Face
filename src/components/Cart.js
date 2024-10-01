@@ -28,7 +28,10 @@ const Cart = ({ cartItems, setCartItems}) => {
 
   const handlePlaceOrder = () => {
     setIsOrderPlaced(true);
-    alert('Payment successful! Thank you for your order.');
+    // alert('Payment successful! Thank you for your order.');
+    let notify = document.querySelector('.notification')
+    notify.textContent = ('Payment successful! Thank you for your order.')
+    notify.style.animation = 'order 2s ease'
 
     const existingHistory = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
     const newPurchase = cartItems.map((item) => ({

@@ -2,10 +2,10 @@
   padding: 40px;
   background-color: #f9f9f9;
   border-radius: 10px;
-  width: 300px;
+  width: 250px;
   margin: 50px auto;
   text-align: center;
-  min-height: 55vh;
+  min-height: 70vh;
 }
 
 .signin-container input {
@@ -33,19 +33,19 @@
   }
 
   .signin-container button {
-    width: 100%; 
+    width: 90%; 
   }
 }
 
 @media (max-width: 480px) {
   .signin-container {
-    width: 90%;
+    width: 80%;
     padding: 20px;
     margin: 30px auto;
   }
 
   .signin-container input {
-    width: 100%; 
+    width: 90%; 
   }
 
   .signin-container button {

@@ -96,14 +96,14 @@ footer {
 
   .header-nav {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-around;
     width: 100%;
   }
 
   .header-nav a {
     margin: 5px 10px;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .header-nav a::after {
@@ -130,12 +130,11 @@ footer {
 
   .header-nav {
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .header-nav a {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .header-nav a::after {
@@ -155,7 +154,7 @@ footer {
   }
 
   .header-nav {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .header-nav a {

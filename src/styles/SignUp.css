@@ -5,7 +5,7 @@
   width: 300px;
   margin: 50px auto;
   text-align: center;
-  min-height: 55vh;
+  min-height: 70vh;
 }
 
 .signup-container input {
@@ -33,19 +33,19 @@
   }
 
   .signup-container button {
-    width: 100%; 
+    width: 90%; 
   }
 }
 
 @media (max-width: 480px) {
   .signup-container {
-    width: 90%;
+    width: 80%;
     padding: 20px;
     margin: 30px auto;
   }
 
   .signup-container input {
-    width: 100%;
+    width: 90%;
   }
 
   .signup-container button {
