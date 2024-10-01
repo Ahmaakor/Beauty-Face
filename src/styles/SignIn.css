@@ -1,0 +1,56 @@
+.signin-container {
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  width: 300px;
+  margin: 50px auto;
+  text-align: center;
+  min-height: 55vh;
+}
+
+.signin-container input {
+  padding: 10px;
+  width: 80%;
+  margin: 10px 0;
+}
+
+.signin-container button {
+  padding: 10px 20px;
+  background-color: #003466;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .signin-container {
+    width: 80%; 
+    padding: 30px;
+  }
+
+  .signin-container input {
+    width: 90%;
+  }
+
+  .signin-container button {
+    width: 100%; 
+  }
+}
+
+@media (max-width: 480px) {
+  .signin-container {
+    width: 90%;
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .signin-container input {
+    width: 100%; 
+  }
+
+  .signin-container button {
+    width: 100%; 
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}

@@ -1,0 +1,47 @@
+.hero{
+    height: 70vh;
+    background: #00346660;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-display{
+    height: 90vh;
+    width:100%;
+    background-image: url(.././images/hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: 0;
+    z-index: -10;
+}
+
+.hero::before{
+    content: 'Elevate Your Style, Embrace Your Beauty';
+    color: #e6e6e6;
+    font-size: 60px;
+}
+.hero::before{
+    content: 'Beauty Face';
+    color: #e6e6e6;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hero::after{
+    content: 'Elevate Your Style, Embrace Your Beauty';
+    color: #e6e6e6;
+    text-align: center;
+    font-size: 30px;
+}
+
+h1{
+    padding: 5px 20px;
+    font-size: 50px;
+    color: #003460;
+}

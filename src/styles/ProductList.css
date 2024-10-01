@@ -1,0 +1,238 @@
+.product-container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  /* border:2px solid red; */
+}
+
+.product-card {
+  margin: 20px auto;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 0 0 10px;
+  position: relative;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.product-pics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+.product-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px 10px 0 0;
+  transition: scale 0.3s ease-in-out;
+}
+.product-card:hover .product-image {
+  scale: 1.1;
+}
+
+.add-cart-button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 80%;
+  background-color: #003466;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.8s ease;
+  /* transform: rotateY(10deg); */
+}
+
+.add-cart-button:active {
+  transform: scale(0.96);
+}
+
+.add-cart-button:before, .add-cart-button:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1000;
+  background-repeat: no-repeat;
+}
+
+.add-cart-button:hover:before {
+  Top: -70%;
+  Background-image: radial-gradient(circle, #003466 20%, transparent 20%),
+    Radial-gradient(circle, transparent 20%, #003466 20%, transparent 30%),
+    Radial-gradient(circle, #003466 20%, transparent 20%),
+    Radial-gradient(circle, #003466 20%, transparent 20%),
+    Radial-gradient(circle, transparent 10%, #003466 15%, transparent 20%),
+    Radial-gradient(circle, #003466 20%, transparent 20%),
+    Radial-gradient(circle, #003466 20%, transparent 20%),
+    Radial-gradient(circle, #003466 20%, transparent 20%),
+    Radial-gradient(circle, #003466 20%, transparent 20%);
+  Background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  Background-position: 50% 120%;
+  Animation: greentopBubbles 0.6s ease;
+}
+
+@keyframes greentopBubbles {
+  0% {
+    Background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+
+  50% {
+    Background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+
+  100% {
+    Background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    Background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+.add-cart-button:hover::after {
+  Bottom: -70%;
+  Background-image: radial-gradient(circle, #003466 20%, transparent 20%),
+    Radial-gradient(circle, #003466 20%, transparent 20%),
+    Radial-gradient(circle, transparent 10%, #003466 15%, transparent 20%),
+    Radial-gradient(circle, #003466 20%, transparent 20%),
+    Radial-gradient(circle, #003466 20%, transparent 20%),
+    Radial-gradient(circle, #003466 20%, transparent 20%),
+    Radial-gradient(circle, #003466 20%, transparent 20%);
+  Background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  Background-position: 50% 0%;
+  Animation: greenbottomBubbles 0.6s ease;
+}
+
+@keyframes greenbottomBubbles {
+  0% {
+    Background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+
+  50% {
+    Background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+
+  100% {
+    Background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    Background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+
+.wishlist-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #003466;
+  cursor: pointer;
+  font-size: 24px;
+  /* padding: 10px; */
+}
+
+.wishlist-icon:hover {
+  opacity: 0.6;
+}
+
+/* Media Query for Tablet Devices (768px and below) */
+@media (max-width: 1024px) {
+  .product-container {
+    grid-template-columns: 1fr 1fr  1fr;
+  }
+
+  .product-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .add-cart-button {
+    padding: 8px;
+  }
+
+  .wishlist-icon {
+    font-size: 20px;
+  }
+}
+
+/* Media Query for Tablet Devices (768px and below) */
+@media (max-width: 768px) {
+  .product-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .add-cart-button {
+    padding: 8px;
+  }
+
+  .wishlist-icon {
+    font-size: 20px;
+  }
+}
+
+/* Media Query for Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  .product-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product-card {
+    margin: 10px;
+    padding: 8px;
+  }
+
+  .product-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .add-cart-button {
+    padding: 6px;
+  }
+
+  .wishlist-icon {
+    font-size: 18px;
+  }
+}
+
+/* Media Query for Small Mobile Devices (320px and below) */
+@media (max-width: 320px) {
+  .product-container {
+    grid-template-columns: auto;
+  }
+
+  .product-card {
+    margin: 8px;
+    padding: 5px;
+  }
+
+  .product-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .add-cart-button {
+    padding: 4px;
+  }
+
+  .wishlist-icon {
+    font-size: 16px;
+  }
+}
