@@ -18,34 +18,46 @@
     position: absolute;
     bottom: 0;
     z-index: -10;
-    animation: swipe 0.6s ease;
+    animation: swipe 6s infinite alternate ease;
 }
 
 @keyframes swipe {
     0% {
         background-image: url(.././images/hero.jpg);
     }
-  
-    50% {
-        background-image: url(.././images/hero1.jpg);
-    }
-  
+    
     100% {
-        background-image: url(.././images/hero.jpg);
+        background-image: url(.././images/hero1.jpg);
     }
 }
 
-.hero::before{
-    content: 'Elevate Your Style, Embrace Your Beauty';
-    color: #e6e6e6;
-    font-size: 60px;
+@keyframes bchange {
+    0% {
+        content: 'Beauty Face';
+    }
+
+    100% {
+        content: 'Best Offers';
+    }
 }
+
+@keyframes achange {
+    0% {
+        content: 'Elevate Your Style, Embrace Your Beauty';
+    }
+
+    100% {
+        content: 'Affordable Prices, Fast Services';
+    }
+}
+
 .hero::before{
     content: 'Beauty Face';
     color: #e6e6e6;
     font-size: 80px;
     font-weight: bold;
     text-align: center;
+    animation: bchange 6s infinite alternate ease;
 }
 
 .hero::after{
@@ -53,6 +65,7 @@
     color: #e6e6e6;
     text-align: center;
     font-size: 30px;
+    animation: achange 6s infinite alternate ease;
 }
 
 h1{
