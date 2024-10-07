@@ -198,7 +198,7 @@ const ProductList = ({ setCartItems }) => {
     },
     {
       id: 26,
-      title: 'Oxford Street Shoe',
+      title: 'Oxford Street',
       price: 89.99,
       imageUrl: image26,
     },
@@ -335,21 +335,29 @@ const ProductList = ({ setCartItems }) => {
         <div key={product.id} className="product-card">
           <div className="product-pics">
           <img src={product.imageUrl} alt={product.title} className="product-image" />
+            <div className="stamp">
+              Beauty<br/>Face 
+            </div>
           </div>
           <h3>{product.title}</h3>
           <p>Price: ${product.price}</p>
           <button
-  onClick={() => {
-    let notify = document.querySelector('.notification')
-    notify.textContent = (`${product.title} has being added to cart.`)
-    notify.style.animation = 'cart 2s ease'
-    // alert(`${product.title} has being added to cart.`);
-    addToCart(product);
-  }}
-  className="add-cart-button"
->
-  Add to Cart
-</button>
+            onClick={() => {
+              let notify = document.querySelector('.notification')
+              notify.textContent = (`${product.title} has being added to cart.`)
+              notify.style.animation = 'cart 2s ease'
+
+              // alert(`${product.title} has being added to cart.`);
+
+              const cartbtn = document.querySelector('.add-cart-button')
+              cartbtn.style.background = 'red'
+
+              addToCart(product);
+            }}
+            className="add-cart-button"
+          >
+            Add to Cart
+          </button>
 
 
           <FontAwesomeIcon

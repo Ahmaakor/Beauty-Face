@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 40px;
   background-color: #00346660;
   transition: background-color 0.3s ease-in-out;
   position: sticky;
@@ -17,7 +17,7 @@
 
 .header-title .logo {
   height: 60px;
-  margin-left: 40px;
+  /* margin-left: 40px; */
 }
 
 .header-nav {
@@ -36,7 +36,7 @@
 
 .header-nav a::after {
   content: '';
-  background-color: #fff;
+  background-color: #e6e6e6;
   height: 5px;
   width: 100%;
   scale: 0;

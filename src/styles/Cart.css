@@ -32,6 +32,7 @@
 }
 
 .cart-sidebar {
+  display: grid;
   flex: 1;
   padding: 20px;
   background-color: #f1f1f1;
@@ -91,10 +92,13 @@
 .cart-sidebar h3 {
   margin: 0 0 20px 0;
   color: #333;
+  text-align: center;
+  font-size: 50px;
 }
 
 .place-order-btn {
   padding: 15px 20px;
+  margin: 0px auto;
   background-color: #28a745;
   color: white;
   border: none;
@@ -111,6 +115,7 @@
   margin-top: 20px;
   color: #28a745;
   font-weight: bold;
+  text-align: center;
 }
 
 .remove-from-cart {
@@ -141,7 +146,7 @@
   }
 
   .cart-sidebar {
-    width: 90%;
+    width: 100%;
     margin-top: 30px;
   }
 
@@ -156,7 +161,7 @@
     margin-bottom: 10px;
   }
 
-  .quantity-control button, .remove-from-cart, .place-order-btn {
+  .quantity-control button, .remove-from-cart {
     padding: 8px 12px;
     width: 100%;
   }
@@ -192,6 +197,6 @@
   }
 
   .cart-sidebar h3 {
-    font-size: 18px;
+    font-size: 40px;
   }
 }
