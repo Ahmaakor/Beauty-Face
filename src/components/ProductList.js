@@ -349,8 +349,8 @@ const ProductList = ({ setCartItems }) => {
 
               // alert(`${product.title} has being added to cart.`);
 
-              const cartbtn = document.querySelector('.add-cart-button')
-              cartbtn.style.background = 'red'
+              // const cartbtn = document.querySelector('.add-cart-button')
+              // cartbtn.style.background = 'red'
 
               addToCart(product);
             }}
