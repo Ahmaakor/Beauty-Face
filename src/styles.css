@@ -5,13 +5,13 @@ body {
   padding: 10px;
   background: #e6e6e6;
   color: #003466;
-  font-size: 20px;
+  font-size: 15px;
   width: fit-content;
   position: fixed;
   border: 2px solid #003466;
   border-radius: 10px;
   top: 10px;
-  left: 40%;
+  left: 10px;
   z-index: 2000;
   transform: translateY(-200px);
   animation: drop 2s ease;

@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
@@ -9,6 +8,7 @@ import Dashboard from './components/Dashboard';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Wishlist from './components/Wishlist';
+import Authentication from './components/Authentication';
 import './App.css';
 
 const App = () => {
@@ -48,6 +48,7 @@ const App = () => {
         <Route path="/" element={<Homepage setCartItems={setCartItems} setWishlistItems={setWishlistItems} />} />
         <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/dashboard" element={<Dashboard cartItems={cartItems} />} />
+        <Route path="/auth" element={<Authentication setUser={setUser} />} />
         <Route path="/signin" element={<SignIn setUser={setUser} />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/wishlist" element={<Wishlist wishlistItems={wishlistItems} setWishlistItems={setWishlistItems} addToCart={addToCart} />} />

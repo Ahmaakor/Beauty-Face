@@ -3,8 +3,7 @@
   background-color: #f8f9fa;
   border-radius: 8px;
   margin: 20px;
-  min-height: 80vh;
-  box-shadow: 0px 5px 3px #5a5a5a;
+  box-shadow: 0px 5px 3px #fff;
 }
 
 .wishlist-container h2 {
@@ -12,12 +11,10 @@
   background: #003466;
   color: #e6e6e6;
   text-align: center;
-  position: sticky;
-  top: 0;
 }
 
 .place-holder {
-  font-size: 50px;
+  font-size: 30px;
   text-align: center;
   height: 100%;
   padding: 10px 0;

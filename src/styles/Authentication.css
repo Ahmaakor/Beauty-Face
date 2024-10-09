@@ -1,0 +1,105 @@
+   .auth {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    overflow: hidden;
+  }
+  
+  .particle-display {
+    position: relative;
+    background: linear-gradient(270deg, #003466, #28a745, #003466);
+    background-size: 600% 600%;
+    animation: GradientAnimation 8s ease infinite;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    z-index: 20;
+  }
+  .displayLogo{
+    width: 100%;
+  }
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #7da7d9;
+  }
+  
+  .auth-form-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+  }
+  
+  .button-container {
+    margin-bottom: 20px;
+  }
+  
+  .toggle-btn {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    background: #e9ecef;
+  }
+  
+  .toggle-btn:hover {
+    background: #ced4da;
+  }
+  
+  .toggle-btn.active {
+    background: #003466;
+    color: #ffffff;
+  }
+  
+  .slide-out-right {
+    transform: translateX(100%); 
+  }
+  
+  .slide-out-left {
+    transform: translateX(-100%); /* Slide out to the left */
+  }
+  
+  .slide-in-left {
+    transform: translateX(-100%); /* Start position: Slide in from left */
+    animation: slideIn 0.5s forwards;
+  }
+  
+  .slide-in-right {
+    transform: translateX(100%); /* Start position: Slide in from right */
+    animation: slideIn 0.5s forwards;
+  }
+  
+  @keyframes slideIn {
+    100% {
+      transform: translateX(0); /* End position: slide to the center */
+    }
+  }
+  
+  /* Particle Background Effects */
+  @keyframes GradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .auth {
+      grid-template-columns: 100%;
+    }
+    .particle-display{
+      display: none;
+    }
+}
