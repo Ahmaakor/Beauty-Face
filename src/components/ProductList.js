@@ -341,6 +341,7 @@ const ProductList = ({ setCartItems }) => {
           </div>
           <h3>{product.title}</h3>
           <p>Price: ${product.price}</p>
+          <div className="wishcar">
           <button
             onClick={() => {
               let notify = document.querySelector('.notification')
@@ -365,6 +366,8 @@ const ProductList = ({ setCartItems }) => {
             className="wishlist-icon"
             onClick={() => addToWishlist(product)}
           />
+          
+          </div>
         </div>
       ))}
     </div>
