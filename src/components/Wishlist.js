@@ -1,10 +1,12 @@
 import React from 'react';
 import '../styles/Wishlist.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart, faClose } from '@fortawesome/free-solid-svg-icons';
 
 const Wishlist = ({ wishlistItems, setWishlistItems, addToCart }) => {
   const handleRemoveFromWishlist = (itemId) => {
     const updatedWishlist = wishlistItems.filter((item) => item.id !== itemId);
-    setWishlistItems(updatedWishlist); // Update state to re-render
+    setWishlistItems(updatedWishlist); 
   };
 
   return (
@@ -14,19 +16,18 @@ const Wishlist = ({ wishlistItems, setWishlistItems, addToCart }) => {
         wishlistItems.map((item) => (
           <div key={item.id} className="wishlist-item">
             <img src={item.imageUrl} alt={item.title} className="item-image" />
-            <div>
+
               <h4>{item.title}</h4>
-              <p>Price: ${item.price}</p>
+              <p>${item.price.toFixed(2)}</p>
               <button className="add-to-cart-btn" onClick={() => addToCart(item)}>
-                Add to Cart
+                <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" />
               </button>
               <button
                 className="remove-from-wishlist"
                 onClick={() => handleRemoveFromWishlist(item.id)}
               >
-                Remove from Wishlist
+                <FontAwesomeIcon icon={faClose} className="cart-icon" />
               </button>
-            </div>
           </div>
         ))
       ) : (

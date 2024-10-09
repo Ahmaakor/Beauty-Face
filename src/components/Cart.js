@@ -58,18 +58,20 @@ const Cart = ({ cartItems, setCartItems}) => {
             cartItems.map((item) => (
               <div key={item.id} className="cart-item">
                 <img src={item.imageUrl} alt={item.title} className="item-image" />
-                <div>
+                <div className="quantity">
                   <h4>{item.title}</h4>
-                  <div>
-                  <p>Price: ${item.price}</p>
-                  <div className="quantity-control">
-                    <button onClick={() => handleQuantityChange(item, -1)}>-</button>
-                    <span>{item.quantity}</span>
-                    <button onClick={() => handleQuantityChange(item, 1)}>+</button>
+                  <div className="quantity inner">
+                    <p>Price: ${item.price.toFixed(2)}</p>
+
+                    <div className="quantity-control">
+                      <button onClick={() => handleQuantityChange(item, -1)}>-</button>
+                      <span>{item.quantity}</span>
+                      <button onClick={() => handleQuantityChange(item, 1)}>+</button>
+                    </div>
                   </div>
-                  </div>
+
                   <button className="remove-from-cart" onClick={() => handleRemoveFromCart(item.id)}>
-                    Remove from Cart
+                    Remove
                   </button>
                 </div>
               </div>
