@@ -348,11 +348,6 @@ const ProductList = ({ setCartItems }) => {
               notify.textContent = (`${product.title} has being added to cart.`)
               notify.style.animation = 'cart 2s ease'
 
-              // alert(`${product.title} has being added to cart.`);
-
-              // const cartbtn = document.querySelector('.add-cart-button')
-              // cartbtn.style.background = 'red'
-
               addToCart(product);
             }}
             className="add-cart-button"
@@ -366,7 +361,7 @@ const ProductList = ({ setCartItems }) => {
             className="wishlist-icon"
             onClick={() => addToWishlist(product)}
           />
-          
+
           </div>
         </div>
       ))}

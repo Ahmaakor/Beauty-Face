@@ -88,7 +88,6 @@
 
 .product-card:hover .product-image {
   scale: 1.1;
-  /* rotate: 360deg; */
 }
 .product-card h3, .product-card p{
   font-size: normal;
@@ -112,7 +111,7 @@
 }
 
 .add-cart-button:active {
-  transform: scale(0.9) rotateX(360deg);
+  transform: scale(0.9) rotateX(40deg);
 }
 
 .add-cart-button:before, .add-cart-button:after {
@@ -204,6 +203,7 @@
   border-radius: 5px;
   transition: .3s;
 }
+
 .wishcar{
   display: flex;
   justify-content: space-around;
@@ -215,7 +215,13 @@
   color: #e6e6e6;
   background-color: #003466;
   transform: rotateY(180deg);
+  transition: .01s;
 }
+
+.wishlist-icon:active {
+  transform: scale(1.2);
+}
+
 
 @media (max-width: 1024px) {
   .product-container {

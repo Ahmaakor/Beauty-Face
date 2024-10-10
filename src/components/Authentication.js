@@ -3,6 +3,8 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import '../styles/Authentication.css';
 import logo from './20240925_183417.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const Authentication = ({ setUser }) => {
   const [isSignUp, setIsSignUp] = useState(true);
@@ -49,10 +51,11 @@ const Authentication = ({ setUser }) => {
             className={`toggle-btn ${!isSignUp ? 'active' : ''}`}
             onClick={handleSignInClick}
           >
-            Sign In
+            Log In
           </button>
         </div>
       </div>
+      <a href="/" className="to-home-icon "><FontAwesomeIcon icon={faHome} className="home-icon" /></a>
     </div>
   );
 };

@@ -23,7 +23,7 @@ const SignIn = ({ setUser }) => {
 
   return (
     <div className="signin-container">
-      <h2>Sign In</h2>
+      <h2>Log In</h2>
       <div className="form-group">
         <label>Username:</label>
         <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
@@ -32,7 +32,7 @@ const SignIn = ({ setUser }) => {
         <label>Password:</label>
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </div>
-      <button onClick={handleSignIn}>Sign In</button>
+      <button onClick={handleSignIn}>Log In</button>
       {error && <p className="error">{error}</p>}
     </div>
   );

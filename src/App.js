@@ -5,8 +5,6 @@ import Footer from './components/Footer';
 import Homepage from './components/Homepage';
 import Cart from './components/Cart';
 import Dashboard from './components/Dashboard';
-import SignIn from './components/SignIn';
-import SignUp from './components/SignUp';
 import Wishlist from './components/Wishlist';
 import Authentication from './components/Authentication';
 import './App.css';
@@ -49,8 +47,6 @@ const App = () => {
         <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/dashboard" element={<Dashboard cartItems={cartItems} />} />
         <Route path="/auth" element={<Authentication setUser={setUser} />} />
-        <Route path="/signin" element={<SignIn setUser={setUser} />} />
-        <Route path="/signup" element={<SignUp />} />
         <Route path="/wishlist" element={<Wishlist wishlistItems={wishlistItems} setWishlistItems={setWishlistItems} addToCart={addToCart} />} />
       </Routes>
       <Footer />

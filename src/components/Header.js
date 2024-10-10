@@ -38,7 +38,7 @@ const Header = ({ user, cartCount, wishlistCount }) => {
           <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" /> Cart  <span className="cart-count">{cartCount}</span>
         </Link>
         <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
-          <FontAwesomeIcon icon={faSignInAlt} className="auth" />
+          <FontAwesomeIcon icon={faSignInAlt} className="auth-icon" />
         </Link>
       </nav>
 
