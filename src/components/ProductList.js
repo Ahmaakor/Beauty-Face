@@ -313,6 +313,7 @@ const ProductList = ({ setCartItems }) => {
   const addToWishlist = (item) => {
     const existingWishlist = JSON.parse(localStorage.getItem('wishlistItems')) || [];
     let notify = document.querySelector('.notification')
+    
     if (!existingWishlist.some((i) => i.id === item.id)) {
       const updatedWishlist = [...existingWishlist, item];
       localStorage.setItem('wishlistItems', JSON.stringify(updatedWishlist));
@@ -356,11 +357,11 @@ const ProductList = ({ setCartItems }) => {
           </button>
 
 
-          <FontAwesomeIcon
-            icon={faHeart}
-            className="wishlist-icon"
-            onClick={() => addToWishlist(product)}
-          />
+
+          <button className="wishlist-icon" onClick={() => addToWishlist(product)}>
+            <FontAwesomeIcon icon={faHeart} />
+          </button>
+
 
           </div>
         </div>

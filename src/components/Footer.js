@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
@@ -26,11 +27,11 @@ const Footer = () => {
         <div className="footer-section links">
           <h2>Quick Links</h2>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/Dashboard">Dashboard</a></li>
-            <li><a href="/Cart">Cart</a></li>
-            <li><a href="/Wishlist">Wishlist</a></li>
-            <li><a href="/auth">Account</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/dashboard">Dashboard</Link></li>
+            <li><Link to="/cart">Cart</Link></li>
+            <li><Link to="/wishlist">Wishlist </Link></li>
+            <li><Link to="/auth">Manage Account</Link></li>
           </ul>
         </div>
 

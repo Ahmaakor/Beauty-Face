@@ -37,12 +37,12 @@ const Header = ({ user, cartCount, wishlistCount }) => {
         <Link to="/cart" onClick={() => setIsMenuOpen(false)}>
           <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" /> Cart  <span className="cart-count">{cartCount}</span>
         </Link>
-        <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
+        <Link to="/auth" className="auth-icon-mobile"  onClick={() => setIsMenuOpen(false)}>
           <FontAwesomeIcon icon={faSignInAlt} className="auth-icon" />
         </Link>
       </nav>
 
-      <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)} tabindex='0'>
         <span className={`bar ${isMenuOpen ? 'open' : ''}`}></span>
         <span className={`bar ${isMenuOpen ? 'open' : ''}`}></span>
         <span className={`bar ${isMenuOpen ? 'open' : ''}`}></span>

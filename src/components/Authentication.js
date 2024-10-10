@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import '../styles/Authentication.css';
@@ -55,7 +56,7 @@ const Authentication = ({ setUser }) => {
           </button>
         </div>
       </div>
-      <a href="/" className="to-home-icon "><FontAwesomeIcon icon={faHome} className="home-icon" /></a>
+      <Link to="/" className="to-home-icon"><FontAwesomeIcon icon={faHome} className="home-icon" /></Link>
     </div>
   );
 };

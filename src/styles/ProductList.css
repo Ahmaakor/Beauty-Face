@@ -195,6 +195,7 @@
 
 .wishlist-icon {
   color: #003466;
+  height: 40px;
   cursor: pointer;
   font-size: 24px;
   z-index: 100;
