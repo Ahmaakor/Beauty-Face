@@ -11,7 +11,7 @@
   background: linear-gradient( to top , #003466, #7da7d9, #003466);
 }
 
-.signup-form h1 {
+.signup-form h1, .signin-form h1 {
   font-size: 28px;
   color: #e6e6e6;
   margin-bottom: 20px;
@@ -74,6 +74,9 @@ label {
     width: 80%; 
     padding: 30px;
   }
+  .signup-form h1, .signin-form h1 {
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -81,6 +84,9 @@ label {
     width: 80%;
     padding: 20px;
     margin: 30px auto;
+  }
+  .signup-form h1, .signin-form h1 {
+    font-size: 20px;
   }
 
   .form-group {
