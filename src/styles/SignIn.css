@@ -11,7 +11,7 @@
   background: linear-gradient( to top , #003466, #7da7d9, #003466);
 }
 
-h1 {
+.signup-form h1 {
   font-size: 28px;
   color: #e6e6e6;
   margin-bottom: 20px;
