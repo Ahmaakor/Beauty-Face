@@ -22,18 +22,20 @@ const SignIn = ({ setUser }) => {
   };
 
   return (
-    <div className="signin-container">
-      <h2>Log In</h2>
+    <div className="signin-form">
+      <h1>Welcome back</h1>
       <div className="form-group">
-        <label>Username:</label>
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+        <label>Username</label>
+        <input type="name" value={username} onChange={(e) => setUsername(e.target.value)} />
       </div>
       <div className="form-group">
-        <label>Password:</label>
+        <label>Password</label>
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </div>
-      <button onClick={handleSignIn}>Log In</button>
       {error && <p className="error">{error}</p>}
+      <button className="auth-btn" onClick={handleSignIn}>
+        Log in
+      </button>
     </div>
   );
 };

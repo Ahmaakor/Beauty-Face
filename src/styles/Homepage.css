@@ -20,14 +20,20 @@
     position: absolute;
     bottom: 0;
     z-index: -10;
-    animation: swipe 6s infinite alternate ease;
+    animation: swipe 12s infinite alternate linear;
 }
 
 @keyframes swipe {
     0% {
         background-image: url(.././images/hero.jpg);
     }
+    25% {
+        background-image: url(.././images/hero.jpg);
+    }
     
+    75% {
+        background-image: url(.././images/hero1.jpg);
+    }
     100% {
         background-image: url(.././images/hero1.jpg);
     }
@@ -36,20 +42,62 @@
 @keyframes bchange {
     0% {
         content: 'Beauty Face';
+        opacity: 1;
+        color: #e6e6e6; 
+    }
+    
+    25% {
+        content: 'Beauty Face';
+        opacity: 1;
+        color: #e6e6e6; 
+    }
+    
+    50% {
+        color: transparent; 
+        opacity: 0;
+    }
+    
+    75% {
+        content: 'Best Offers';
+        opacity: 1;
+        color: #e6e6e6; 
     }
 
     100% {
         content: 'Best Offers';
+        color: #e6e6e6; 
+        opacity: 1;
     }
 }
 
 @keyframes achange {
     0% {
         content: 'Elevate Your Style & Your Beauty';
+        opacity: 1;
+        color: #e6e6e6; 
+    }
+
+    25% {
+        content: 'Elevate Your Style & Your Beauty';
+        opacity: 1;
+        color: #e6e6e6; 
+    }
+    
+    50% {
+        color: transparent; 
+        opacity: 0;
+    }
+    
+    75% {
+        content: 'Affordable Prices, Fast Services';        
+        opacity: 1;
+        color: #e6e6e6; 
     }
 
     100% {
-        content: 'Affordable Prices, Fast Services';
+        content: 'Affordable Prices, Fast Services';        
+        opacity: 1;
+        color: #e6e6e6; 
     }
 }
 
@@ -59,7 +107,7 @@
     font-size: 80px;
     font-weight: bold;
     text-align: center;
-    animation: bchange 6s infinite alternate ease;
+    animation: bchange 12s infinite alternate ease;
 }
 
 .hero::after{
@@ -67,7 +115,7 @@
     color: #e6e6e6;
     text-align: center;
     font-size: 30px;
-    animation: achange 6s infinite alternate ease;
+    animation: achange 12s infinite alternate ease;
 }
 
 h1{

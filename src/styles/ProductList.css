@@ -259,6 +259,7 @@
 
   .wishlist-icon {
     font-size: 20px;
+    height: 36px;
   }
 }
 
@@ -269,12 +270,10 @@
     justify-content: center;
     align-items: center;
     width: fit-content;
-    /* border: 2px solid red; */
   }
 
   .product-card {
     margin: 10px auto;
-    /* padding: 4px; */
   }
 
   .product-image {
@@ -288,6 +287,8 @@
 
   .wishlist-icon {
     font-size: 18px;
+    padding-top: 4px;
+    height: 32px;
   }
 }
 
@@ -295,7 +296,6 @@
 
   .product-card {
     margin: 8px auto;
-    /* padding: 5px; */
   }
 
   .product-image {
@@ -309,5 +309,7 @@
 
   .wishlist-icon {
     font-size: 16px;
+    height: 28px;
+    padding: 4px;
   }
 }

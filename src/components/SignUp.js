@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/SignUp.css';
+import '../styles/SignIn.css';
 
 const SignUp = ({ setIsSignUp }) => {
   const [username, setUsername] = useState('');
@@ -26,26 +26,20 @@ const SignUp = ({ setIsSignUp }) => {
   };
 
   return (
-    <div className="signup-container">
-      <h2>Create an Account</h2>
+    <div className="signup-form">
+      <h1>Join our community</h1>
       <div className="form-group">
-        <label>Username:</label>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+        <label>Username</label>
+        <input type="name" value={username} onChange={(e) => setUsername(e.target.value)} />
       </div>
       <div className="form-group">
-        <label>Password:</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <label>Password</label>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </div>
-      <button onClick={handleSignUp}>Sign Up</button>
       {error && <p className="error">{error}</p>}
+      <submit className="auth-btn" onClick={handleSignUp}>
+        Sign up
+      </submit>
     </div>
   );
 };

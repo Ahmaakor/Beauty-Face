@@ -1,59 +1,90 @@
-.signin-container {
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  max-width: 400px;
-  margin: 50px auto;
+.signin-form, .signup-form {
+  background: linear-gradient( to top, #7da7d9, #003466);
+  padding: 30px; 
+  border-radius: 20px;
+  border: 2px solid #003466;
+  max-width: 300px;
+  margin: 30px auto;
+  display: grid;
+}
+.signup-form {
+  background: linear-gradient( to top , #003466, #7da7d9, #003466);
+}
+
+h1 {
+  font-size: 28px;
+  color: #e6e6e6;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.signin-container input {
+.form-group {
+  margin-bottom: 10px;
+  width: calc(100% - 30px);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #e6e6e6;
+}
+
+.form-group input {
+  width: 100%;
   padding: 10px;
-  width: 80%;
-  margin: 10px 0;
+  margin-bottom: 10px;
+  border: 2px solid #fbeaeb;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #003466;
+  background-color: #e6e6e690;
+  backdrop-filter: blur(10px);
 }
-
-.signin-container button {
-  padding: 10px 20px;
+.form-group input{
+  outline: none;
+}
+.auth-btn {
   background-color: #003466;
-  color: white;
+  color: #e6e6e6;
+  padding: 10px;
+  width: fit-content;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0px  0px 0px auto;
 }
 
-.error{
-  color: red;
+.auth-btn:hover {
+  background: linear-gradient( to bottom, #7da7d9, #003466);
+}
+
+.error {
+  color: #ff6347;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
-  .signin-container {
+  .signin-form, .signup-form {
     width: 80%; 
     padding: 30px;
-  }
-
-  .signin-container input {
-    width: 90%;
-  }
-
-  .signin-container button {
-    width: 90%; 
   }
 }
 
 @media (max-width: 480px) {
-  .signin-container {
+  .signin-form, .signup-form {
     width: 80%;
     padding: 20px;
     margin: 30px auto;
   }
 
-  .signin-container input {
-    width: 90%; 
+  .form-group {
+    width: calc(100% - 30px);
   }
 
-  .signin-container button {
-    width: 100%; 
-    font-size: 14px;
-    padding: 8px 15px;
-  }
 }

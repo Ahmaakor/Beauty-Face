@@ -32,7 +32,7 @@
 
 .particle-display {
   position: relative;
-  background: linear-gradient(270deg, #003466, #28a745, #003466);
+  background: linear-gradient(270deg, #003466, #25a1bd, #003466);
   background-size: 600% 600%;
   animation: GradientAnimation 8s ease infinite;
   overflow: hidden;
@@ -60,22 +60,27 @@
 }
 
 .button-container {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .toggle-btn {
   padding: 10px 20px;
-  margin: 0 5px;
+  /* margin: 0 5px; */
   cursor: pointer;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
   transition: 0.3s;
   background: #e9ecef;
+  color: #003466;
+}
+
+.toggle-btn:nth-child(2) {
+  border-radius: 0 5px 5px 0;
 }
 
 .toggle-btn:hover {
-  background: #ced4da;
+  background: #a8b8c8;
 }
 
 .toggle-btn.active {
@@ -83,21 +88,27 @@
   color: #ffffff;
 }
 
+.toggle-btn.active:hover {  
+  background: #00346690;
+}
+
 .slide-out-right {
-  transform: translateX(100%); 
+  transform: translateX(150%); 
+  transition: 0.5s;
 }
 
 .slide-out-left {
-  transform: translateX(-100%);
+  transform: translateX( -150%);
+  transition: transform 0.5s;
 }
 
 .slide-in-left {
-  transform: translateX(-100%);
+  transform: translateX(-150%);
   animation: slideIn 0.5s forwards;
 }
 
 .slide-in-right {
-  transform: translateX(100%);
+  transform: translateX(150%);
   animation: slideIn 0.5s forwards;
 }
 
