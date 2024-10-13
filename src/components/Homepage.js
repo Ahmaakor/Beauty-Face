@@ -4,9 +4,13 @@ import '../styles/Homepage.css';
 import banner1 from './new-images/Doublebanner.png'
 import banner2 from './new-images/Doublebanner2.png'
 
-// import lady from './new-images/LADIES.png'
-// import gents from './new-images/GENT.png'
-// import watch from './new-images/ACCESSORIES.png'
+import fashion1 from './new-images/fashion (1).png'
+import fashion2 from './new-images/fashion (2).png'
+import fashion3 from './new-images/fashion (3).png'
+import fashion4 from './new-images/fashion (4).png'
+import fashion5 from './new-images/fashion (5).png'
+import fashion6 from './new-images/fashion (6).png'
+import fashion7 from './new-images/fashion (7).png'
 
 const Homepage = ({ cartItems, setCartItems}) => {
 
@@ -50,31 +54,37 @@ const Homepage = ({ cartItems, setCartItems}) => {
       <img src={watch} alt="product-image" className="banner" /> */}
 
       <div className='fashion-card'>
+        <img src={fashion7} alt="product-image" />
         <p>
           Kid wears
         </p>
       </div>
       <div className='fashion-card'>
+        <img src={fashion1} alt="product-image" />
         <p>
           Caps
         </p>
       </div>
       <div className='fashion-card'>
+        <img src={fashion3} alt="product-image"/>
         <p>
           Watches
         </p>
       </div>
       <div className='fashion-card'>
+        <img src={fashion4} alt="product-image" />
         <p>
           Men wears 
         </p>
       </div>
       <div className='fashion-card'>
+        <img src={fashion6} alt="product-image" />
         <p>
           Ladies wears
         </p>
       </div>
       <div className='fashion-card'>
+        <img src={fashion2} alt="product-image"/>
         <p>
           Shoe
         </p>
