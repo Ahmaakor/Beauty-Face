@@ -45,14 +45,14 @@ const Footer = () => {
         <div className="footer-section social">
           <h2>Follow Us</h2>
           <div className="social-icons">
-            <a href="https://facebook.com/Ahmaakor" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faFacebookF} className="social-icon facebook" />
+            <a href="https://facebook.com/Ahmaakor"  className="social-icon facebook" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faFacebookF}  />
             </a>
-            <a href="https://tiktok.com/ahmadabduljeleel" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faTiktok} className="social-icon tiktok" />
+            <a href="https://instagram.com/ahmaakor" className="social-icon instagram" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a href="https://instagram.com/ahmaakor" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faInstagram} className="social-icon instagram" />
+            <a href="https://tiktok.com/ahmadabduljeleel" className="social-icon tiktok" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faTiktok} />
             </a>
           </div>
         </div>

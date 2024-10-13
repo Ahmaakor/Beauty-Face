@@ -76,24 +76,37 @@
 
 .social-icon {
     color: #e6e6e6;
-    font-size: 24px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 20px;
+    transition: 0.3s;
+    height: 2rem;
+    width: 2rem;
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    outline: 2px solid #e6e6e6;
+    display: grid;
+    place-items: center;
 }
 
 .social-icon:hover {
-    transform: scale(1.1);
+    outline-offset: 3px;
+    transition: all 0.3s;
 }
 
 .social-icon.facebook:hover {
-    color: #0d6efd; 
+    background: #1877f2; 
 }
 
 .social-icon.tiktok:hover {
-    color: #000; 
+    background: #010101; 
 }
 
 .social-icon.instagram:hover {
-    color: #e1306c;
+    background: radial-gradient(
+        circle at 30% 107%, #fdf497 0%,
+        #fdf497 5%, #fd5949 45%, 
+        #d6249f 60%, #285aeb 90%
+    );
 }
 
 

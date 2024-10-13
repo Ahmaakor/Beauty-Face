@@ -104,7 +104,7 @@
 .hero::before{
     content: 'Beauty Face';
     color: #e6e6e6;
-    font-size: 80px;
+    font-size: 80px;    
     font-weight: bold;
     text-align: center;
     animation: bchange 12s infinite alternate ease;
@@ -124,6 +124,46 @@ h1{
     font-weight: bold;
     text-align: center;
     color: #003466;
+}
+
+.banner-section, .fashion-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: start;
+    gap: 10px;
+    padding: 20px 40px;
+}
+.banner{
+    width: 100%;
+    transition: .2s;
+}
+.banner:hover{
+    scale: 1.02;
+}
+
+.fashion-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px 40px;
+}
+
+.fashion-card{
+    width: calc(100% - 20px);
+    height: 100px;
+    background: #0a0f32;
+    color: #f0f8ff;
+    border-radius: 16px;
+    padding: 10px; 
+    position: relative;
+}
+
+.fashion-card p{
+    font-size: 50px;
+    color: #f0f8ff30;
+    position: absolute;
+    /* padding-right: 10px; */
+    top: 0px;
+    right: 10px;
 }
 
 @media (max-width: 768px) {
