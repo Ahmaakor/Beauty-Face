@@ -1,4 +1,5 @@
 import React from 'react';
+import empty from './new-images/package.png'
 import '../styles/Wishlist.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faClose } from '@fortawesome/free-solid-svg-icons';
@@ -31,7 +32,10 @@ const Wishlist = ({ wishlistItems, setWishlistItems, addToCart }) => {
           </div>
         ))
       ) : (
-        <p className="place-holder">Your wishlist is empty.</p>
+        <div className="place">
+          <img src={empty} alt="empty" className="empty" />
+          <p className="place-holder">Your wishlist is empty.</p>
+        </div>
       )}
     </div>
   );

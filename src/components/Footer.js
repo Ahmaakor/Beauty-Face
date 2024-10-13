@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faTiktok, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -48,10 +48,13 @@ const Footer = () => {
             <a href="https://facebook.com/Ahmaakor"  className="social-icon facebook" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faFacebookF}  />
             </a>
+            <a href="https://twitter.com/ahmaakor" className="social-icon tiktok" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faXTwitter} />
+            </a>
             <a href="https://instagram.com/ahmaakor" className="social-icon instagram" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a href="https://tiktok.com/ahmadabduljeleel" className="social-icon tiktok" target="_blank" rel="noopener noreferrer">
+            <a href="https://tiktok.com/@ahmadabduljeleel" className="social-icon tiktok" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faTiktok} />
             </a>
           </div>

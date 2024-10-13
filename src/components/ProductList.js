@@ -309,23 +309,32 @@ const ProductList = ({ setCartItems }) => {
   };
 
   const [wishlistItems, setWishlistItems] = useState([]);
+const [animationAlert, setAnimationAlert] = useState(''); // State for managing animation class
 
-  const addToWishlist = (item) => {
-    const existingWishlist = JSON.parse(localStorage.getItem('wishlistItems')) || [];
-    let notify = document.querySelector('.notification')
-    
-    if (!existingWishlist.some((i) => i.id === item.id)) {
-      const updatedWishlist = [...existingWishlist, item];
-      localStorage.setItem('wishlistItems', JSON.stringify(updatedWishlist));
-      setWishlistItems(updatedWishlist);
-      notify.textContent = (`${item.title} has been added to your wishlist!`)
-      notify.style.animation = 'wish1 2s ease'
-      // alert(`${item.title} has been added to your wishlist!`);
-    } else {
-      notify.textContent = (`${item.title} is already in your wishlist.`)
-      notify.style.animation = 'wish2 2s ease'
-      // alert(`${item.title} is already in your wishlist.`);
-    }
+const addToWishlist = (item) => {
+  const existingWishlist = JSON.parse(localStorage.getItem('wishlistItems')) || [];
+  let notify = document.querySelector('.notification');
+  
+  if (!existingWishlist.some((i) => i.id === item.id)) {
+    const updatedWishlist = [...existingWishlist, item];
+    localStorage.setItem('wishlistItems', JSON.stringify(updatedWishlist));
+    setWishlistItems(updatedWishlist);
+
+    setAnimationAlert('alert');
+    setTimeout(() => {
+      setAnimationAlert('wish1'); 
+    }, 500);
+
+    notify.textContent = `${item.title} has been added to your wishlist!`;
+    notify.style.animation = `${animationAlert} 2s ease`; 
+
+  } else {
+    notify.textContent = `${item.title} is already in your wishlist.`;
+    notify.style.animation = `already 2s ease`; 
+  }
+  setAnimationAlert('alertr');
+
+
   };
   
 

@@ -144,7 +144,7 @@ h1{
 .fashion-section{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px 40px;
+    gap: 20px 20px;
 }
 
 .fashion-card{
@@ -157,22 +157,50 @@ h1{
     position: relative;
     /* background: linear-gradient( to bottom right, #7da7d9 1%, #0a0f32); */
     transition: .4s;
+    box-shadow: 0 4px 8px #00346660;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
 }
 
 .fashion-card p{
-    font-size: 50px;
+    font-size: 40px;
     color: #f0f8ff30;
     position: absolute;
     text-align: right;
     top: 0px;
     right: 10px;
 }
-
-.fashion-card:hover{
-    background: linear-gradient( to bottom right, #7da7d9 1%, #0a0f32);
+.arrow-icon{
+    font-size: 30px;
+    color: #e6e6e6;
+    transition: .2s;
 }
+.arrow-icon:hover{
+    border-bottom: 2px solid #e6e6e6;
+}
+.fashion-card:hover{
+    /* transform: translate(2px, 2px); */
+    /* opacity: 0.8; */
+    background: #003466; 
+}
+
+.fashion-card:hover .fashion-card:not(:hover){
+    scale: 0.5;
+    opacity: 0.5;
+}
+
 .fashion-card img{
-    height: 100px;
+    height: 110px;
+}
+
+@media (max-width: 1024px) {
+    .banner-section, .fashion-section{
+        grid-template-columns: 1fr 1fr;
+    }
+    .fashion-section p{
+        font-size: 40px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -185,6 +213,7 @@ h1{
     }
     .banner-section, .fashion-section{
         grid-template-columns: 1fr;
+        padding: 20px;
     }
     .fashion-section p{
         font-size: 30px;
@@ -198,6 +227,10 @@ h1{
 
     .hero::after{
         font-size: 23px;
+    }
+    .banner-section, .fashion-section{
+        grid-template-columns: 1fr;
+        padding: 20px;
     }
 }
 

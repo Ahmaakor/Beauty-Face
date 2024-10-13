@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 // import ProductList from './ProductList';
+import empty from './new-images/add-to-cart.png'
+import { Link } from 'react-router-dom';
 import '../styles/Cart.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 
 const Cart = ({ cartItems, setCartItems}) => {
   const [isOrderPlaced, setIsOrderPlaced] = useState(false);
@@ -77,7 +82,11 @@ const Cart = ({ cartItems, setCartItems}) => {
               </div>
             ))
           ) : (
-            <p className="place-holder">Your cart is empty.</p>
+            <div className="place">
+              <img src={empty} alt="empty" className="empty" />
+              <p className="place-holder">Your cart is empty.</p>
+              <Link to="/">Shop Now <FontAwesomeIcon icon={faArrowRight}/></Link>
+            </div>
           )}
         </div>
         <div className="cart-sidebar">
