@@ -21,6 +21,10 @@ const Footer = () => {
     console.log('Subscribed with email:', email);
     setEmail('');
 
+    let notify = document.querySelector('.notification')
+    notify.textContent = `Subscribed with ${email}`
+    notify.style.animation = 'sub 3s ease'
+
     // // const sendEmail = (e) => {
     //   e.preventDefault();
     
