@@ -1,17 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useRef} from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faTiktok, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import emailjs from 'emailjs-com'
+
+
+
+
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState('');
 
+  const form = useRef()
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Subscribed with email:', email);
     setEmail('');
+
+    // // const sendEmail = (e) => {
+    //   e.preventDefault();
+    
+      emailjs
+        .sendForm('service_pk7rr4x', 'template_1vhzaea', form.current, 
+        '_wTVOIl31jQM0_gWn',
+        )
+        .then(
+          () => {
+            console.log('SUCCESS!');
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+          },
+        );
+    // };
+
   };
 
   return (
@@ -64,9 +90,10 @@ const Footer = () => {
 
       <div className="footer-section newsletter">
         <h2>Subscribe to Our Newsletter</h2>
-        <form onSubmit={handleSubmit} className="newsletter-form">
+        <form onSubmit={handleSubmit} className="newsletter-form" ref = {form}> 
           <input
             type="email"
+            name="to_name"
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
