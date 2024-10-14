@@ -332,7 +332,7 @@ const addToWishlist = (item) => {
     notify.textContent = `${item.title} is already in your wishlist.`;
     notify.style.animation = `already 2s ease`; 
   }
-  setAnimationAlert('alertr');
+  setAnimationAlert('alert');
 
 
   };
