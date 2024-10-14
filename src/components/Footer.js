@@ -68,7 +68,7 @@ const Footer = () => {
 
         <div className="footer-section contact">
           <h2>Contact Info</h2>
-          <p>Email: ahmaakor@gmail.com</p>
+          <p>Email: noreplybeautyface@gmail.com</p>
           <p>Phone: +234 701 319 9799</p>
           <p>Address: 123 Beauty Street, Ibadan, Nigeria</p>
         </div>
