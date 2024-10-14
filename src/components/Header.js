@@ -30,6 +30,7 @@ const Header = ({ user, cartCount, wishlistCount }) => {
 
       <nav className={`header-nav ${isMenuOpen ? 'active' : ''}`}>
         <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+        <Link to="/product" onClick={() => setIsMenuOpen(false)}>Product</Link>
         <Link to="/dashboard" onClick={() => setIsMenuOpen(false)}>Dashboard</Link>
         <Link to="/wishlist" onClick={() => setIsMenuOpen(false)}>
           Wishlist <span className="cart-count">{wishlistCount}</span>

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Homepage from './components/Homepage';
+import Product from './components/Product';
 import Cart from './components/Cart';
 import Dashboard from './components/Dashboard';
 import Wishlist from './components/Wishlist';
@@ -44,6 +45,7 @@ const App = () => {
       <Header user={user} setUser={setUser} cartCount={cartItems.length} wishlistCount={wishlistItems.length} />
       <Routes>
         <Route path="/" element={<Homepage setCartItems={setCartItems} setWishlistItems={setWishlistItems} />} />
+        <Route path="/product" element={<Product setCartItems={setCartItems} setWishlistItems={setWishlistItems} />} />
         <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/dashboard" element={<Dashboard cartItems={cartItems} />} />
         <Route path="/auth" element={<Authentication setUser={setUser} />} />

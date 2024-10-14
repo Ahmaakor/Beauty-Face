@@ -71,7 +71,7 @@ const Homepage = ({ cartItems, setCartItems}) => {
         <p>
           Caps
         </p>
-        <Link to="/">
+        <Link to="/product">
           <FontAwesomeIcon icon={faArrowRight} className="arrow-icon" />
         </Link>
       </div>
@@ -80,7 +80,7 @@ const Homepage = ({ cartItems, setCartItems}) => {
         <p>
           Watches
         </p>
-        <Link to="/">
+        <Link to="/product">
           <FontAwesomeIcon icon={faArrowRight} className="arrow-icon" />
         </Link>
       </div>
@@ -89,7 +89,7 @@ const Homepage = ({ cartItems, setCartItems}) => {
         <p>
           Men wears 
         </p>
-        <Link to="/">
+        <Link to="/product">
           <FontAwesomeIcon icon={faArrowRight} className="arrow-icon" />
         </Link>
       </div>
@@ -98,7 +98,7 @@ const Homepage = ({ cartItems, setCartItems}) => {
         <p>
           Ladies wears
         </p>
-        <Link to="/">
+        <Link to="/product">
           <FontAwesomeIcon icon={faArrowRight} className="arrow-icon" />
         </Link>
       </div>
@@ -107,14 +107,14 @@ const Homepage = ({ cartItems, setCartItems}) => {
         <p>
           Shoe
         </p>
-        <Link to="/">
+        <Link to="/product">
           <FontAwesomeIcon icon={faArrowRight} className="arrow-icon" />
         </Link>
       </div>
     </div>
 
-    <h1>Our Products</h1>
-      <ProductList setCartItems={setCartItems} />
+    {/* <h1>Our Products</h1>
+      <ProductList setCartItems={setCartItems} /> */}
     </>
   );
 };

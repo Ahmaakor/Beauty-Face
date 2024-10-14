@@ -85,7 +85,7 @@ const Cart = ({ cartItems, setCartItems}) => {
             <div className="place">
               <img src={empty} alt="empty" className="empty" />
               <p className="place-holder">Your cart is empty.</p>
-              <Link to="/">Shop Now <FontAwesomeIcon icon={faArrowRight}/></Link>
+              <Link to="/product">Shop Now <FontAwesomeIcon icon={faArrowRight}/></Link>
             </div>
           )}
         </div>
