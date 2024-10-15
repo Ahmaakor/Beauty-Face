@@ -225,6 +225,7 @@ const Cart = ({ cartItems, setCartItems }) => {
     setIsOrderPlaced(true);
     setShowPopover(false);
 
+
     const emailParams = {
       to_name: customerInfo.name,
       to_email: customerInfo.email,
@@ -233,7 +234,7 @@ const Cart = ({ cartItems, setCartItems }) => {
       address: customerInfo.address,
       city: customerInfo.city,
       state: customerInfo.state,
-      order_details: cartItems.map((item) => `${item.title} (${item.quantity} x $${item.price})`).join(', '),
+      order_details: cartItems.map((item) => `${item.quantity}  ${item.title} = (${item.quantity} * ${item.price.toFixed(2)})   =  $ ${(item.price*item.quantity).toFixed(2)}`).join(' \n '),
       total_price: totalPrice.toFixed(2), // Removed shipping fee
       customer_name: customerInfo.name,
     };
