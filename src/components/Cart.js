@@ -11,7 +11,7 @@
 //   const [showPopover, setShowPopover] = useState(false);
 //   const [customerInfo, setCustomerInfo] = useState({
 //     name: '', // Add name field
-//     email: '',
+//     email: '', 
 //     phone: '',
 //     address: '',
 //     city: '',
@@ -235,7 +235,7 @@ const Cart = ({ cartItems, setCartItems }) => {
       city: customerInfo.city,
       state: customerInfo.state,
       order_details: cartItems.map((item) => `${item.quantity}  ${item.title} = (${item.quantity} * ${item.price.toFixed(2)})   =  $ ${(item.price*item.quantity).toFixed(2)}`).join(' \n '),
-      total_price: totalPrice.toFixed(2), // Removed shipping fee
+      total_price: totalPrice.toFixed(2),
       customer_name: customerInfo.name,
     };
 

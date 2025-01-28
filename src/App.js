@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import Homepage from './components/Homepage';
 import Product from './components/Product';
 import Cart from './components/Cart';
@@ -51,7 +50,7 @@ const App = () => {
         <Route path="/auth" element={<Authentication setUser={setUser} />} />
         <Route path="/wishlist" element={<Wishlist wishlistItems={wishlistItems} setWishlistItems={setWishlistItems} addToCart={addToCart} />} />
       </Routes>
-      <Footer />
+      
     </Router>
   );
 };

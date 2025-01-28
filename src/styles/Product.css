@@ -1,0 +1,35 @@
+.product{
+    display: grid;
+    grid-template-columns: 250px, 1fr;
+    grid-template-rows: 100vh;
+    grid-template-areas: "sidebar product";
+    /* position: relative;  */
+}
+#search{
+    background: none;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #ececec;
+    outline: none;
+    width: 230px;
+    position: relative;
+}
+
+#search::placeholder{
+    position: absolute;
+    color: #ececec;
+    opacity: 0.7;
+}
+.sidebar{
+    /* height: 100vh; */
+    width: 250px;
+    background-color: #7da7d9;
+    grid-area: sidebar;
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+}
+.main{
+    grid-area: product;
+    overflow: auto; 
+}

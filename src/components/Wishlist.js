@@ -10,7 +10,7 @@ const Wishlist = ({ wishlistItems, setWishlistItems, addToCart }) => {
     setWishlistItems(updatedWishlist); 
   };
 
-  return (
+  return (   
     <div className="wishlist-container">
       <h2>My Wishlists</h2>
       {wishlistItems.length > 0 ? (
