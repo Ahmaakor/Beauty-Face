@@ -1,4 +1,3 @@
-
 // import React from 'react';
 // import ProductList from './ProductList';
 // import '../styles/Product.css';
@@ -47,10 +46,11 @@ import logo from './logo.png';
 import ProductList from './ProductList';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMale, faFemale, faChild, faBaby, faTshirt, faShoePrints, faClock, faHatCowboy, faShoppingCart, faTachometerAlt, faHeart, faSignInAlt, faFilter} from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faTh, faMale, faFemale, faChild, faBaby, faTshirt, faShoePrints, faClock, faBagShopping, faHatCowboy, faShoppingCart, faTachometerAlt, faHeart, faSignInAlt, faFilter} from '@fortawesome/free-solid-svg-icons';
 import '../styles/Product.css';
 
 const categories = [
+  { name: 'All', icon: faTh },
   { name: 'Men Clothing', icon: faMale },
   { name: 'Women Clothing', icon: faFemale },
   { name: 'Kids Clothing', icon: faChild },
@@ -58,6 +58,7 @@ const categories = [
   { name: 'Clothes', icon: faTshirt },
   { name: 'Shoes', icon: faShoePrints },
   { name: 'Watches', icon: faClock },
+  { name: 'Bags', icon: faBagShopping },
   { name: 'Caps', icon: faHatCowboy },
 ];
 
@@ -111,7 +112,7 @@ const Product = ({ cartItems, setCartItems }) => {
           <div className="product-categories">
             {categories.map((category, index) => (
               <div className="product-category" key={index}>
-                <FontAwesomeIcon icon={category.icon} /> {category.name}
+                <FontAwesomeIcon icon={category.icon} className="product-category-icon"/> {category.name}
               </div>
             ))}
           </div>
@@ -121,7 +122,7 @@ const Product = ({ cartItems, setCartItems }) => {
           <div className="search-filter">
             <div class="search-container">
               <input type="search" name="search" id="search" placeholder="Search for goods..." required />
-              <button type="submit" for="search" class="search-button">Search</button>
+              <button type="submit" for="search" class="search-button"><FontAwesomeIcon icon={faSearch} /></button>
             </div>
 
             <div className="filter-container">
@@ -129,13 +130,14 @@ const Product = ({ cartItems, setCartItems }) => {
                 <FontAwesomeIcon icon={faFilter} /> Sort by:
               </label>
               <select id="filter-by" name="filter" className="filter-select">
-                <option value="none"><FontAwesomeIcon icon={faFilter} /> Sort by:</option>
+                <option value="none"></option>
                 <option value="name">Name</option>
                 <option value="price">Price</option>
                 <option value="new">New</option>
                 <option value="rating">Rating</option>
               </select>
             </div>
+  
           </div>
           <ProductList setCartItems={setCartItems} />
         </div>
