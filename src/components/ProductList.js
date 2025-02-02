@@ -44,6 +44,7 @@ import image38 from '.././images/sneakers3.jpg'
 import image39 from '.././images/sneakers5.jpg'
 import image40 from '.././images/sneakers6.jpg'
 
+// const ProductList = ({ setCartItems, setWishlistItems }) => {
 const ProductList = ({ setCartItems }) => {
   const products = [
     {
@@ -306,33 +307,36 @@ const ProductList = ({ setCartItems }) => {
       localStorage.setItem('cartItems', JSON.stringify(updatedCart));
       return updatedCart;
     });
+    let notify = document.querySelector('.notification')
+    notify.textContent = (`${item.title} has being added to cart.`)
+    notify.style.animation = 'cart 2s ease'
   };
 
   const [wishlistItems, setWishlistItems] = useState([]);
-const [animationAlert, setAnimationAlert] = useState(''); // State for managing animation class
+  const [animationAlert, setAnimationAlert] = useState(''); 
 
-const addToWishlist = (item) => {
-  const existingWishlist = JSON.parse(localStorage.getItem('wishlistItems')) || [];
-  let notify = document.querySelector('.notification');
-  
-  if (!existingWishlist.some((i) => i.id === item.id)) {
-    const updatedWishlist = [...existingWishlist, item];
-    localStorage.setItem('wishlistItems', JSON.stringify(updatedWishlist));
-    setWishlistItems(updatedWishlist);
+  const addToWishlist = (item) => {
+    const existingWishlist = JSON.parse(localStorage.getItem('wishlistItems')) || [];
+    let notify = document.querySelector('.notification');
+    
+    if (!existingWishlist.some((i) => i.id === item.id)) {
+      const updatedWishlist = [...existingWishlist, item];
+      localStorage.setItem('wishlistItems', JSON.stringify(updatedWishlist));
+      setWishlistItems(updatedWishlist);
 
+      setAnimationAlert('alert');
+      setTimeout(() => {
+        setAnimationAlert('wish1'); 
+      }, 500);
+
+      notify.textContent = `${item.title} has been added to your wishlist!`;
+      notify.style.animation = `${animationAlert} 2s ease`; 
+
+    } else {
+      notify.textContent = `${item.title} is already in your wishlist.`;
+      notify.style.animation = `already 2s ease`; 
+    }
     setAnimationAlert('alert');
-    setTimeout(() => {
-      setAnimationAlert('wish1'); 
-    }, 500);
-
-    notify.textContent = `${item.title} has been added to your wishlist!`;
-    notify.style.animation = `${animationAlert} 2s ease`; 
-
-  } else {
-    notify.textContent = `${item.title} is already in your wishlist.`;
-    notify.style.animation = `already 2s ease`; 
-  }
-  setAnimationAlert('alert');
 
 
   };
@@ -344,28 +348,20 @@ const addToWishlist = (item) => {
       {products.map((product) => (
         <div key={product.id} className="product-card">
           <div className="product-pics">
-          <img src={product.imageUrl} alt={product.title} className="product-image" />
-            <div className="stamp">
-              Beauty<br/>Face 
-            </div>
+            <img src={product.imageUrl} alt={product.title} className="product-image" />
           </div>
           <h3>{product.title}</h3>
           <p>Price: ${product.price}</p>
           <div className="wishcar">
-          <button
-            onClick={() => {
-              let notify = document.querySelector('.notification')
-              notify.textContent = (`${product.title} has being added to cart.`)
-              notify.style.animation = 'cart 2s ease'
-
-              addToCart(product);
-            }}
-            className="add-cart-button"
-          >
-            Add to Cart
-          </button>
-
-
+            <button
+              onClick={() => {
+                addToCart(product);
+                }
+              }
+              className="add-cart-button"
+            >
+              Add to Cart
+            </button>
 
           <button className="wishlist-icon" onClick={() => addToWishlist(product)}>
             <FontAwesomeIcon icon={faHeart} />
