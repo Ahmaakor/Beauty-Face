@@ -169,15 +169,13 @@
     border-color: #007bff;
   }
   
-
-
   @media (max-width: 768px) {
 
     .search-filter{
         justify-content: space-between;
     }
     .search-container{
-        wid
+        width: 70%;
     }
   
     #search {
