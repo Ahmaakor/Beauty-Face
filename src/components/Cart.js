@@ -346,6 +346,8 @@ const Cart = ({ cartItems, setCartItems }) => {
                 <option value="Kano" />
               </datalist>
               <button type="submit">Submit Order</button>
+
+              
             </form>
           </div>
         </div>
