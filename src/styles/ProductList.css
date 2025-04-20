@@ -55,8 +55,8 @@
   transition: all 0.8s ease;
 }
 
-.add-cart-button:active {
-  transform: scale(0.9) rotateX(40deg);
+.add-cart-button:hover {
+  transform: scale(0.95) rotateX(0deg);
 }
 
 .add-cart-button:before, .add-cart-button:after {
@@ -70,7 +70,7 @@
   background-repeat: no-repeat;
 }
 
-.add-cart-button:hover:before {
+.add-cart-button:active:before {
   Top: -70%;
   Background-image: radial-gradient(circle, #003466 20%, transparent 20%),
     Radial-gradient(circle, transparent 20%, #003466 20%, transparent 30%),
@@ -105,7 +105,7 @@
   }
 }
 
-.add-cart-button:hover::after {
+.add-cart-button:active::after {
   Bottom: -70%;
   Background-image: radial-gradient(circle, #003466 20%, transparent 20%),
     Radial-gradient(circle, #003466 20%, transparent 20%),
