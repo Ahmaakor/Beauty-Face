@@ -5,29 +5,46 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faTiktok, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import emailjs from 'emailjs-com'
 
-
-
-
-
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState('');
 
   const form = useRef()
 
+  const showToast = (message, type) => {
+    let container = document.getElementById("toast-container");
+
+    // Create container if it doesn't exist
+    if (!container) {
+      container = document.createElement("div");
+      container.id = "toast-container";
+      container.className = "toast-container";
+      document.body.appendChild(container);
+    }
+
+    // Create toast
+    const toast = document.createElement("div");
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+
+    // Append and remove after timeout
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.remove();
+      // Remove container if empty
+      if (!container.hasChildNodes()) {
+        container.remove();
+      }
+    }, 3000);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Subscribed with email:', email);
     setEmail('');
-
-    let notify = document.querySelector('.notification')
-    notify.textContent = `Subscribed with ${email}`
-    notify.style.animation = 'sub 3s ease'
-
-    // // const sendEmail = (e) => {
-    //   e.preventDefault();
     
+    // console.log('Subscribed with email:', email);
+    // showToast(`Subscribed with ${email}`, "success")
+
       emailjs
         .sendForm('service_pk7rr4x', 'template_1vhzaea', form.current, 
         '_wTVOIl31jQM0_gWn',
@@ -35,12 +52,13 @@ const Footer = () => {
         .then(
           () => {
             console.log('SUCCESS!');
+            showToast("Subscribtion successfull", "success")
           },
           (error) => {
             console.log('FAILED...', error.text);
+            showToast("Subscription failed!", "error")
           },
         );
-    // };
 
   };
 

@@ -1,4 +1,5 @@
 import React, { useState} from 'react';
+import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import '../styles/ProductList.css';
@@ -45,7 +46,7 @@ import image39 from '.././images/sneakers5.jpg'
 import image40 from '.././images/sneakers6.jpg'
 
 // const ProductList = ({ setCartItems, setWishlistItems }) => {
-const ProductList = ({ setCartItems }) => {
+const ProductList =  ({ setCartItems }) => {
   const products = [
     {
       id: 1,
@@ -290,6 +291,32 @@ const ProductList = ({ setCartItems }) => {
   ];
 
 
+  const showToast = (message, type) => {
+    let container = document.getElementById("toast-container");
+
+    // Create container if it doesn't exist
+    if (!container) {
+      container = document.createElement("div");
+      container.id = "toast-container";
+      container.className = "toast-container";
+      document.body.appendChild(container);
+    }
+
+    // Create toast
+    const toast = document.createElement("div");
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+
+    // Append and remove after timeout
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.remove();
+      // Remove container if empty
+      if (!container.hasChildNodes()) {
+        container.remove();
+      }
+    }, 3000);
+  };
 
   const addToCart = (item) => {
     setCartItems((prevItems) => {
@@ -307,44 +334,30 @@ const ProductList = ({ setCartItems }) => {
       localStorage.setItem('cartItems', JSON.stringify(updatedCart));
       return updatedCart;
     });
-    let notify = document.querySelector('.notification')
-    notify.textContent = (`${item.title} has being added to cart.`)
-    notify.style.animation = 'cart 2s ease'
+    showToast(`${item.title} has being added to cart.`, "success")
   };
 
   const [wishlistItems, setWishlistItems] = useState([]);
-  const [animationAlert, setAnimationAlert] = useState(''); 
 
   const addToWishlist = (item) => {
     const existingWishlist = JSON.parse(localStorage.getItem('wishlistItems')) || [];
-    let notify = document.querySelector('.notification');
     
     if (!existingWishlist.some((i) => i.id === item.id)) {
       const updatedWishlist = [...existingWishlist, item];
       localStorage.setItem('wishlistItems', JSON.stringify(updatedWishlist));
       setWishlistItems(updatedWishlist);
 
-      setAnimationAlert('alert');
-      setTimeout(() => {
-        setAnimationAlert('wish1'); 
-      }, 500);
-
-      notify.textContent = `${item.title} has been added to your wishlist!`;
-      notify.style.animation = `${animationAlert} 2s ease`; 
-
+      showToast(`${item.title} has been added to your wishlist!`, "success")
     } else {
-      notify.textContent = `${item.title} is already in your wishlist.`;
-      notify.style.animation = `already 2s ease`; 
+      showToast(`${item.title} is already in your wishlist.`, "success") 
     }
-    setAnimationAlert('alert');
-
-
+    
   };
-  
 
   return (
+    <>
     <div className="product-container">
-      <></>
+      {/* <></> */}
       {products.map((product) => (
         <div key={product.id} className="product-card">
           <div className="product-pics">
@@ -363,15 +376,14 @@ const ProductList = ({ setCartItems }) => {
               Add to Cart
             </button>
 
-          <button className="wishlist-icon" onClick={() => addToWishlist(product)}>
-            <FontAwesomeIcon icon={faHeart} />
-          </button>
-
-
+            <button className="wishlist-icon" onClick={() => addToWishlist(product)}>
+              <FontAwesomeIcon icon={faHeart} />
+            </button>
           </div>
         </div>
       ))}
     </div>
+    </>
   );
 };
 

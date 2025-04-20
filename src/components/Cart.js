@@ -198,6 +198,33 @@ const Cart = ({ cartItems, setCartItems }) => {
   });
   const popoverRef = useRef(null);
 
+  const showToast = (message, type) => {
+    let container = document.getElementById("toast-container");
+
+    // Create container if it doesn't exist
+    if (!container) {
+      container = document.createElement("div");
+      container.id = "toast-container";
+      container.className = "toast-container";
+      document.body.appendChild(container);
+    }
+
+    // Create toast
+    const toast = document.createElement("div");
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+
+    // Append and remove after timeout
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.remove();
+      // Remove container if empty
+      if (!container.hasChildNodes()) {
+        container.remove();
+      }
+    }, 3000);
+  };
+
   const handleQuantityChange = (item, delta) => {
     setCartItems((prevItems) => {
       const updatedCart = prevItems.map((i) =>
@@ -242,8 +269,10 @@ const Cart = ({ cartItems, setCartItems }) => {
     emailjs.send('service_lwil6zg', 'template_n1qgkth', emailParams, '_wTVOIl31jQM0_gWn')
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
+        showToast(`Order successfully. ${response.status} `, "success");
       }, (err) => {
         console.log('FAILED...', err);
+        showToast(`Order failed! ${err.text}`, "error");
       });
 
     const existingHistory = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
@@ -311,7 +340,7 @@ const Cart = ({ cartItems, setCartItems }) => {
         <div className="cart-sidebar">
           <h3>Total: ${totalPrice.toFixed(2)}</h3>
           <button onClick={handlePlaceOrder} className="place-order-btn">Place Order</button>
-          {isOrderPlaced && <p className="order-success">Order placed successfully!</p>}
+          {/* {isOrderPlaced && <p className="order-success">Order placed successfully!</p>} */}
         </div>
       </div>
 

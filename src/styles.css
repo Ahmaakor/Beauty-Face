@@ -1,172 +1,36 @@
 body {
   background-color: #f0f8ff;
 }
-.notification{
-  padding: 10px;
-  background: #e6e6e6;
-  color: #003466;
-  font-size: 15px;
-  width: fit-content;
+
+.toast-container {
   position: fixed;
-  border: 2px solid #003466;
-  border-radius: 10px;
-  top: 10px;
-  left: 10px;
-  z-index: 2000;
-  transform: translateY(-200px);
-  animation: drop 2s ease;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
 }
 
-@keyframes already {
-  0% {
-    transform: translateY(-200px);
-  }
-
-  25% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(0px);
-  }
-
-  75% {
-    transform: translateY(0px);
-  }
-
-  100% {
-    transform: translateY(-200px);
-  }
+.toast {
+  margin-top: 10px;
+  padding: 16px;
+  min-width: 250px;
+  border-radius: 5px;
+  color: #fff;
+  background: #fff;
+  font-size: 16px;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-@keyframes sub {
-  0% {
-    transform: translateY(-200px);
-  }
+.toast-success { color: #28a745; border: 2px solid #28a745;}
+.toast-error   { color: #dc3545; border: 2px solid #dc3545;}
+.toast-info    { color: #17a2b8; border: 2px solid #17a2b8;}
+.toast-warning { background-color: #ffc107; color: #000; }
 
-  25% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(0px);
-  }
-
-  75% {
-    transform: translateY(0px);
-  }
-
-  100% {
-    transform: translateY(-200px);
-  }
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes cart {
-  0% {
-    transform: translateY(-200px);
-  }
-
-  25% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(0px);
-  }
-
-  75% {
-    transform: translateY(0px);
-  }
-
-  100% {
-    transform: translateY(-200px);
-  }
-}
-
-@keyframes alert {
-  0% {
-    transform: translateY(-200px);
-  }
-
-  25% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(0px);
-  }
-
-  75% {
-    transform: translateY(0px);
-  }
-
-  100% {
-    transform: translateY(-200px);
-  }
-}
-
-@keyframes wish1 {
-  0% {
-    transform: translateY(-200px);
-  }
-
-  25% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(0px);
-  }
-
-  75% {
-    transform: translateY(0px);
-  }
-
-  100% {
-    transform: translateY(-200px);
-  }
-}
-
-@keyframes wish2 {
-  0% {
-    transform: translateY(-200px);
-  }
-
-  25% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(0px);
-  }
-
-  75% {
-    transform: translateY(0px);
-  }
-
-  100% {
-    transform: translateY(-200px);
-  }
-}
-
-@keyframes order {
-  0% {
-    transform: translateY(-200px);
-  }
-
-  25% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(0px);
-  }
-
-  75% {
-    transform: translateY(0px);
-  }
-
-  100% {
-    transform: translateY(-200px);
-  }
+@keyframes fadeout {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(20px); }
 }

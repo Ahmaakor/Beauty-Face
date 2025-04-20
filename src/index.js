@@ -8,9 +8,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
-    <div className="notification">
-        I'm notification for alert
-    </div>
   </React.StrictMode>
 );
 
